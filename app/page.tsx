@@ -770,7 +770,7 @@ export default function Home() {
 
       <div className="mt-8">
         <a
-          href="https://calendly.com/your-calendly-link" // ⚠️ اپنا کیلنڈلی یا میٹنگ لنک یہاں درج کریں
+          href="https://calendly.com/your-calendly-link" 
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all transform hover:-translate-y-0.5"
@@ -806,7 +806,7 @@ export default function Home() {
 
       {/* Upwork */}
       <a
-        href="https://www.upwork.com/freelancers/~YOUR_UPWORK_ID"
+        href="https://www.upwork.com/freelancers/~0171c1dda123ee65e4"
         target="_blank"
         rel="noopener noreferrer"
         className="p-4 rounded-2xl border border-gray-200 bg-white hover:border-emerald-500 transition-all flex items-center justify-between group shadow-sm"
@@ -823,7 +823,7 @@ export default function Home() {
 
       {/* Fiverr */}
       <a
-        href="https://www.fiverr.com/your_fiverr_username"
+        href="https://www.fiverr.com/s/9d2vwoA"
         target="_blank"
         rel="noopener noreferrer"
         className="p-4 rounded-2xl border border-gray-200 bg-white hover:border-emerald-500 transition-all flex items-center justify-between group shadow-sm"
@@ -840,7 +840,7 @@ export default function Home() {
 
       {/* PeoplePerHour */}
       <a
-        href="https://www.peopleperhour.com/freelancer/~YOUR_PPH_ID"
+        href="https://www.peopleperhour.com/freelancer/design/muhammad_mohsin-shahzad-full-stack-developer-next-js-react-zyyvjzqy"
         target="_blank"
         rel="noopener noreferrer"
         className="p-4 rounded-2xl border border-gray-200 bg-white hover:border-orange-500 transition-all flex items-center justify-between group shadow-sm"
@@ -857,7 +857,7 @@ export default function Home() {
 
       {/* LinkedIn */}
       <a
-        href="https://www.linkedin.com/in/your_linkedin_username"
+        href="https://www.linkedin.com/in/muhammad-mohsin-shahzad-273bb01bb/"
         target="_blank"
         rel="noopener noreferrer"
         className="p-4 rounded-2xl border border-gray-200 bg-white hover:border-sky-500 transition-all flex items-center justify-between group shadow-sm"
@@ -947,87 +947,88 @@ export default function Home() {
 
   </div>
 </section>
-      </main>
 
-      {/* Floating AI Chatbot Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        {!isChatOpen ? (
-          <button
-            onClick={() => setIsChatOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-2 font-medium transition-all transform hover:scale-105 cursor-pointer"
-          >
-            🤖 <span>Ask Mohsin's AI</span>
-          </button>
-        ) : (
-          <div className="bg-white w-80 sm:w-96 rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transition-all">
-            {/* Chat Header */}
-            <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse"></span>
-                <h4 className="font-bold text-sm">Mohsin's AI Assistant</h4>
-              </div>
-              <button
-                onClick={() => setIsChatOpen(false)}
-                className="text-white/80 hover:text-white font-bold text-lg cursor-pointer"
-              >
-                &times;
-              </button>
-            </div>
+</main>
 
-            {/* Chat Messages Body */}
-            <div className="p-4 h-80 overflow-y-auto space-y-3 bg-gray-50 text-sm flex flex-col">
-              {chatMessages.map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-                >
-                  <div
-                    className={`max-w-[85%] px-4 py-2.5 rounded-2xl ${
-                      msg.sender === 'user'
-                        ? 'bg-blue-600 text-white rounded-br-none'
-                        : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
-                    }`}
-                  >
-                    {msg.text}
-                  </div>
-                </div>
-              ))}
-              {chatLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-white border border-gray-200 text-gray-500 px-4 py-2.5 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
-                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
-                  </div>
-                </div>
-              )}
-              <div ref={chatEndRef} />
-            </div>
-
-            {/* Chat Input */}
-            <form onSubmit={handleSendChat} className="p-3 bg-white border-t border-gray-100 flex items-center gap-2">
-              <input
-                type="text"
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                placeholder="Ask something..."
-                className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                disabled={chatLoading}
-              />
-              <button
-                type="submit"
-                disabled={chatLoading || !chatInput.trim()}
-                className="bg-blue-600 text-white p-2.5 rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </button>
-            </form>
-          </div>
-        )}
+{/* Floating AI Chatbot Widget */}
+<div className="fixed bottom-6 right-6 z-50">
+  {!isChatOpen ? (
+    <button
+      onClick={() => setIsChatOpen(true)}
+      className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-2 font-medium transition-all transform hover:scale-105 cursor-pointer"
+    >
+      🤖 <span>Ask Mohsin's AI</span>
+    </button>
+  ) : (
+    <div className="bg-white w-80 sm:w-96 rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transition-all">
+      {/* Chat Header */}
+      <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse"></span>
+          <h4 className="font-bold text-sm">Mohsin's AI Assistant</h4>
+        </div>
+        <button
+          onClick={() => setIsChatOpen(false)}
+          className="text-white/80 hover:text-white font-bold text-lg cursor-pointer"
+        >
+          &times;
+        </button>
       </div>
 
+      {/* Chat Messages Body */}
+      <div className="p-4 h-80 overflow-y-auto space-y-3 bg-gray-50 text-sm flex flex-col">
+        {chatMessages.map((msg, idx) => (
+          <div
+            key={idx}
+            className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div
+              className={`max-w-[85%] px-4 py-2.5 rounded-2xl ${
+                msg.sender === 'user'
+                  ? 'bg-blue-600 text-white rounded-br-none'
+                  : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
+              }`}
+            >
+              {msg.text}
+            </div>
+          </div>
+        ))}
+        {chatLoading && (
+          <div className="flex justify-start">
+            <div className="bg-white border border-gray-200 text-gray-500 px-4 py-2.5 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
+              <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+              <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+            </div>
+          </div>
+        )}
+        <div ref={chatEndRef} />
+      </div>
+
+      {/* Chat Input */}
+      <form onSubmit={handleSendChat} className="p-3 bg-white border-t border-gray-100 flex items-center gap-2">
+        <input
+          type="text"
+          value={chatInput}
+          onChange={(e) => setChatInput(e.target.value)}
+          placeholder="Ask something..."
+          className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+          disabled={chatLoading}
+        />
+        <button
+          type="submit"
+          disabled={chatLoading || !chatInput.trim()}
+          className="bg-blue-600 text-white p-2.5 rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+        </button>
+      </form>
     </div>
-  );
+  )}
+</div>
+
+</div>
+);
 }
