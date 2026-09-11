@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin/', // ایڈمن پاتھ کو گوگل اور دوسرے سرچ انجنز سے محفوظ رکھنے کے لیے
     },
-    sitemap: 'https://mohsin-ai-portfolio.vercel.app/sitemap.xml',
+    sitemap: 'https://mohsinshahzad.vercel.app/sitemap.xml', // صحیح لائیو ڈومین
   };
 }
