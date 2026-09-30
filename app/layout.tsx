@@ -21,9 +21,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  // 👇 Yeh verification object yahan add kar dein:
   verification: {
-    google: '<meta name="google-site-verification" content="5jLyAObVaYun6CP0vuSZURN_OispuiucmcR8AntET7A" />',
+    google: "5jLyAObVaYun6CP0vuSZURN_OispuiucmcR8AntET7A",
   },
   openGraph: {
     title: "Web Development Services | Full-Stack & Next.js Developer",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development Services | Full-Stack & Next.js Developer",
+    title: "Web DevelopmentServices | Full-Stack & Next.js Developer",
     description: "Professional website development services for modern web apps, SaaS, and custom platforms. Fast, SEO-ready & scalable.",
     images: ["/og-image.png"],
   },
